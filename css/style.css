@@ -1,0 +1,12 @@
+ul#password-list li {
+	display: inline;
+	text-decoration: none;
+}
+
+div.list-item {
+	float: left;
+	background: #F5F5F5;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 5px;
+}
