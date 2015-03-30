@@ -17,7 +17,11 @@ $( document ).ready(function() {
 	});
 
 	$( '#password-list' ).on('click', '.close', function() {
-		$(this).parent('li').remove();
-		console.log('close');
+		var listItem = $(this).parent('li');
+		listItem.addClass('animated bounceOutLeft').one('webkitAnmiationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			listItem.removeClass('anmated bounceOutLeft');
+		}).delay(300).queue(function(){
+			listItem.remove().dequeue();
+		});
 	});
 });
