@@ -1,5 +1,3 @@
-var passwordArray = [];
-
 function getRandomInt() {
   return Math.floor(Math.random() * passwords.length);
 }
@@ -10,13 +8,16 @@ function getRandomString() {
 
 $( document ).ready(function() {
     
-	$( "#generate" ).on( "click", function() {
-  		var html = '<div draggable="true" class="list-item"><li>';
+	$(document).on('click', '#generate', function() {
+  		var html = '<li>';
   		html += getRandomString();
-  		html += "</li></div>";
+  		html += '<a class="close" href="#">x</a></li>';
+  		
   		$('#password-list').append(html);
-
-
 	});
 
+	$( '#password-list' ).on('click', '.close', function() {
+		$(this).parent('li').remove();
+		console.log('close');
+	});
 });

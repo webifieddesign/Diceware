@@ -19,12 +19,17 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Click the button to generate a random word.</p>
-        <button id="generate">Go!</button>
-
-        <ul id="password-list">
+        <div id=wrapper>
+            <h1>Create your diceware password!</h1>
+            <h2>Click the button to generate a random word.</h2>
+            <button id="generate">Go!</button>
             
-        </ul>
+            <div class="drag-box">
+                <ul id="password-list">
+                    <li>test<a class="close" href="#">x</a></li>
+                </ul>
+            </div>
+        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
