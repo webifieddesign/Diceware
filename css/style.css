@@ -1,3 +1,14 @@
+/* Prevent the text contents of draggable elements from being selectable. */
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
 #wrapper {
 	max-width: 1020;
 }
@@ -39,14 +50,18 @@ button#generate {
 
 ul#password-list {
 	display: flex;
+	display: -webkit-flex;
 	flex-direction: row;
+	-webkit-flex-direction: row;
 	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
 }
 
 ul#password-list li {
 	display: inline;
 	text-decoration: none;
 	justify-content: flex-start;
+	justify-content: -webkit-flex-start;
 	background: #646464;
 	padding: 10px;
 	margin: 5px;
@@ -55,12 +70,16 @@ ul#password-list li {
 	color: #fff;
 }
 
+ul#password-list li.over {
+  border: 2px dashed #000;
+}
+
 ul#password-list li .close {
 	  margin-left: 5px;
 	  height: 14px;
 	  width: 14px;
 	  border-radius: 50%;
-	  border: 1px solid #fff;
+	  /*border: 1px solid #fff;*/
 	  text-decoration: none;
 	  color: #fff;
 	  font-size: .6rem;
